@@ -6,18 +6,30 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:  AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            leading: IconButton(
-              icon: Icon(Icons.arrow_back),
-                tooltip: 'Click to Home Screen',
-                onPressed: () { 
-              }
-            ),
+            backgroundColor: Colors.white,
+            elevation: 0,
             forceElevated: true,
             floating: true,
-            pinned: false,
+            pinned: true,
+            flexibleSpace:  FlexibleSpaceBar(
+              title: Container(
+                  child: Row(
+                    children: [
+                     Icon(Icons.arrow_back,),
+
+                    ],
+                ),
+              ),
+            ),
+            expandedHeight: 280,
+            
           ),
          SliverList(
           delegate: SliverChildBuilderDelegate(
@@ -39,6 +51,7 @@ class Home extends StatelessWidget {
           ),
         ),
         ],
+      
       )
     );
   }
